@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('fontend.layouts.master');
+    return view('fontend.home');
 });
 
 //dashboard Start
