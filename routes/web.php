@@ -21,6 +21,10 @@ Route::get('/', function () {
 });
 
 //dashboard Start
-Route::get('/mydashboard', [dashboarController::class, 'mydashboard'])->name('mydashboard');
+Route::get('/mydashboard', [dashboarController::class, 'mydashboard'])->name('mydashboard')->middleware('auth');
 Route::get('/form', [dashboarController::class, 'form']);
 Route::get('/register', [dashboarController::class, 'register']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
